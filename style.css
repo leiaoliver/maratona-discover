@@ -1,0 +1,313 @@
+:root {
+  /*COLOS*/
+  --white: white;
+  --xwhite: #f0f2f5;
+  --green: #3dd705;
+  --xgreen: #49AA26;
+  --xxgreen: #12a454;
+  --xxxgreen: #2d4a22;
+  --blue: #363f5f;
+  --xblue: #969cb3;
+  --red: #e92929;
+  /*FONTS*/
+  --font-family: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 93.75%;
+}
+
+body {
+  background: var(--xwhite);
+  font-family: var(--font-family);
+}
+
+.container {
+  width: 470px;
+  margin: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+header {
+  background: var(--xxxgreen);
+  padding: 2rem 0 10rem;
+  text-align: center;
+}
+
+header h1 {
+  color: var(--white);
+  font-weight: 100;
+}
+
+main section h2 {
+  margin-top: 3.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--blue);
+  font-weight: normal;
+}
+
+main section#balance {
+  width: 100%;
+  margin-top: -8rem;
+}
+
+main section#balance h2 {
+  color: var(--white);
+  margin-top: 0;
+}
+
+main section#balance .card {
+  background: var(--white);
+  padding: 1.5rem 2rem;
+  border-radius: .25rem;
+  margin-bottom: 2rem;
+  color: var(--blue);
+}
+
+main section#balance .card h3 {
+  font-weight: normal;
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main section#balance .card p {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 1rem;
+}
+
+main section#balance .card.total {
+  background: var(--xgreen);
+  color: var(--white);
+}
+
+main section#transactions {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+main section#transactions a {
+  color: var(--xgreen);
+  text-decoration: none;
+}
+
+main section#transactions a:hover {
+  color: var(--green);
+}
+
+main section#transactions .button.new {
+  display: inline-block;
+  margin-bottom: .8rem;
+}
+
+main section#transactions table#data-table {
+  width: 100%;
+  border-spacing: 0 0.5rem;
+  color: var(--xblue);
+}
+
+main section#transactions table#data-table thead tr th:first-child,
+main section#transactions table#data-table tbody tr td:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+main section#transactions table#data-table thead tr th:last-child,
+main section#transactions table#data-table tbody tr td:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+main section#transactions table#data-table th {
+  background: var(--white);
+  font-weight: normal;
+  padding: 1rem 2rem;
+  text-align: left;
+}
+
+main section#transactions table#data-table tbody td {
+  background: var(--white);
+  padding: 1rem 2rem;
+}
+
+main section#transactions table#data-table tbody td.description {
+  color: var(--blue);
+}
+
+main section#transactions table#data-table tbody td.income {
+  color: var(--green);
+}
+
+main section#transactions table#data-table tbody td.expense {
+  color: var(--red);
+}
+
+main section#transactions table#data-table tbody tr {
+  opacity: 0.7;
+}
+
+main section#transactions table#data-table tbody tr:hover {
+  opacity: 1;
+}
+
+.modal-overlay {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-overlay .modal {
+  background: var(--xwhite);
+  padding: 2.4rem;
+  width: 90%;
+  max-width: 500px;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#form {
+  max-width: 500px;
+}
+
+#form h2 {
+  margin-top: 0;
+  font-weight: 400;
+}
+
+#form input {
+  border: none;
+  border-radius: 0.2rem;
+  padding: .8rem;
+  width: 100%;
+}
+
+#form small {
+  opacity: 0.4;
+}
+
+#form .input-group {
+  margin-top: 0.8rem;
+}
+
+#form .input-group.actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#form .input-group.actions .cancel {
+  color: var(--red);
+  border: 2px var(--red) solid;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0.6;
+}
+
+#form .input-group.actions .cancel:hover {
+  opacity: 1;
+}
+
+#form .input-group.actions .button {
+  width: 48%;
+}
+
+#form .input-group.actions button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  color: var(--white);
+  background: var(--xgreen);
+  padding: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+#form .input-group.actions button:hover {
+  background: var(--green);
+}
+
+footer {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  color: var(--blue);
+  opacity: 0.6;
+  z-index: 0;
+}
+
+/* Responsive */
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+  .container {
+    width: 800px;
+    margin: auto;
+  }
+  #balance {
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
